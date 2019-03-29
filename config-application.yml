@@ -1,0 +1,25 @@
+server:
+  port: 8001
+spring:
+  application:
+    name: EMPLOYEE-PROVIDER
+  profiles: dev
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka #设置需要将服务注册到哪里
+  instance:
+    prefer-ip-address: true #是否在注册中心添加IP显示
+---
+server:
+  port: 8002
+spring:
+  application:
+    name: EMPLOYEE-PROVIDER-TEST
+  profiles: test
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7001/eureka #设置需要将服务注册到哪里
+  instance:
+    prefer-ip-address: true #是否在注册中心添加IP显示
